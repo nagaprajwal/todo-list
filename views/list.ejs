@@ -1,0 +1,31 @@
+
+<%- include("header") -%>
+    <div class="box" id="heading">
+
+        <h1><%= listtitle %></h1>
+    </div>
+    <div class="box">
+   
+         <% for(var i=0;i<newlistitem.length;i++){ %>
+      <div class="item">
+        <input type="checkbox">
+          <p>
+            <%=newlistitem[i] %>
+        </p>
+      </div>
+              <%} %>
+
+              <!-- to get response from website to server ,, use post by using form-->
+                <form  class="item" action="/" method="post">
+                    <input type="text" name="newItem" placeholder="newItem" autocomplete="off">
+                    <button class="btn" type="submit" name="list" value=<%= listtitle %>>+</button>
+                  
+                </form>
+    </div>
+    
+    <!-- <button type="button" class="logreg">register</button> -->
+    <button type="button" class="logreg"><a href="/register">Register</a></button>
+    <button type="button" class="logreg"><a href="/login">login</a></button>
+
+
+    <%- include("footer") -%>
